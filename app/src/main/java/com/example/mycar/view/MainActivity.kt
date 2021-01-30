@@ -11,19 +11,12 @@ import com.example.mycar.databinding.FragmentMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    lateinit var reciver:AirMod
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        reciver = AirMod()
-
-        IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
-            registerReceiver(reciver,it)
-        }
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId){
@@ -40,8 +33,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStop() {
-        super.onStop()
-        unregisterReceiver(reciver)
-    }
 }
