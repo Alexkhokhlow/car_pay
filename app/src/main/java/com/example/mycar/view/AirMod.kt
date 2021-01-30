@@ -11,7 +11,6 @@ class AirMod:BroadcastReceiver() {
         if(!a){
             Toast.makeText(context,"AXUENO EST' INTERNET",Toast.LENGTH_SHORT).show()
         } else{
-            val a  = 1
             Toast.makeText(context,"NOU INTERNET",Toast.LENGTH_SHORT).show()
 
         }
