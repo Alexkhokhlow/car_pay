@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mycar.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_carListFragment"
+            app:destination="@id/carListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addCarFragment"
+            app:destination="@id/addCarFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addEventFragment"
+            app:destination="@id/addEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carListFragment"
+        android:name="com.example.mycar.view.CarListFragment"
+        android:label="fragment_car_list"
+        tools:layout="@layout/fragment_car_list" >
+        <action
+            android:id="@+id/action_carListFragment_to_addCarFragment"
+            app:destination="@id/addCarFragment" />
+        <action
+            android:id="@+id/action_carListFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCarFragment"
+        android:name="com.example.mycar.view.AddCarFragment"
+        android:label="fragment_add_car"
+        tools:layout="@layout/fragment_add_car" >
+        <action
+            android:id="@+id/action_addCarFragment_to_carListFragment"
+            app:destination="@id/carListFragment" />
+        <argument
+            android:name="idCar"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEventFragment"
+        android:name="com.example.mycar.view.AddEventFragment"
+        android:label="AddEventFragment" >
+        <action
+            android:id="@+id/action_addEventFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="idEvent"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+</navigation>

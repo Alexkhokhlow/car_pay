@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyCar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="autoname">AutoName</string>
+    <string name="update">Update</string>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="2dp"
+    android:elevation="8dp"
+    android:layout_height="wrap_content">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/event_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Название события"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/event_item_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Тип события"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_item_name" />
+
+    <TextView
+        android:id="@+id/event_item_work_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выполненая работа"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_item_type" />
+
+    <TextView
+        android:id="@+id/event_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Цена"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_item_work_type" />
+
+    <TextView
+        android:id="@+id/event_item_mileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пробег"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_item_price" />
+
+    <TextView
+        android:id="@+id/event_item_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Коментарий"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_item_mileage" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

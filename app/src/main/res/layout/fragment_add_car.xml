@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.mycar.viewModel.MainViewModel"/>
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddCarFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_car_name"
+            android:layout_margin="16dp"
+            android:hint="Car Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+               android:text="@={viewmodel.carName}"
+                android:id="@+id/add_car_name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+             />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_car_mark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Car Mark"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_car_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={viewmodel.carMark}"
+                android:id="@+id/add_car_mark_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_car_model"
+            android:hint="Car Model"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_car_mark"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={viewmodel.carModel}"
+                android:id="@+id/add_car_model_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_car_fuel"
+            android:hint="Car Fuel"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_car_model"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={viewmodel.carFuel}"
+                android:id="@+id/add_car_fuel_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_car_mileage"
+            android:hint="Car Mileage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_car_fuel"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+             <com.google.android.material.textfield.TextInputEditText
+                 android:text="@={viewmodel.carMileage}"
+                 android:id="@+id/add_car_mileage_edit"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/add_car_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->viewmodel.insertOrUpdateCar()}"
+        android:text="@{viewmodel.buttonAddOrUpdate}"
+        android:layout_margin = "20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_car_mileage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

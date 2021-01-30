@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/service"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_plumbing_24"
+        android:title="Service"/>
+</menu>

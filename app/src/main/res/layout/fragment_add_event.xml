@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.mycar.viewModel.MainViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddEventFragment">
+
+    <EditText
+        android:id="@+id/event_add_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@={viewmodel.eventName}"
+        android:hint="Название события"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/event_add_item_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@={viewmodel.eventType}"
+        android:hint="Тип события"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_add_item_name" />
+
+    <EditText
+        android:id="@+id/event_add_item_work_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@={viewmodel.eventWorkType}"
+        android:hint="Выполненая работа"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_add_item_type" />
+
+    <EditText
+        android:id="@+id/event_add_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@={viewmodel.eventPrice}"
+        android:hint="Цена"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_add_item_work_type" />
+
+    <EditText
+        android:id="@+id/event_add_item_mileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@={viewmodel.eventMileage}"
+        android:hint="Пробег"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_add_item_price" />
+
+    <EditText
+        android:id="@+id/event_add_item_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@={viewmodel.eventComment}"
+        android:hint="Коментарий"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_add_item_mileage"/>
+
+    <Button
+        android:id="@+id/event_add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="add event"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_add_item_comment"
+        android:onClick="@{()->viewmodel.insertOrUpdateEvent()}"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
